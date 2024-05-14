@@ -66,12 +66,15 @@
 
 ```js
 //Создание объекта класса
-let light = SensorManager.CreateDevice('11')[0];
+let gl5528 = SensorManager.CreateDevice('11');
+let light = gl5528[0];
+let r = gl5528[1];
 // Запускаем опрос 
 light.Start(50);
 
 let interval = setInterval(() => {
-    console.log(`Light value is ${(light.Value).toFixed(1)} lux`);
+    console.log(`Light value is ${(light.Value).toFixed(1)} Lux`);
+    console.log(`Resistance is ${(r.Value).toFixed(0)} Ohm`);
 }, 1000);
 ```
 Результат выполнения:
